@@ -1,0 +1,123 @@
+.animated-search-input {
+    transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
+}
+
+.animated-search-input label {
+    display: block;
+    letter-spacing: 4px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.animated-search-input label .label-text {
+    color: #9B9B9B;
+    cursor: text;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    transform: translateY(-34px);
+    transition: all 0.3s;
+}
+
+.animated-search-input label .label-text i {
+    padding-right: 10px;
+}
+
+.animated-search-input label input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #4A4A4A;
+    color: white;
+    font-size: 36px;
+    letter-spacing: -1px;
+    outline: 0;
+    padding: 5px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.animated-search-input label input:focus {
+    width: 110%;
+}
+
+.animated-search-input label input:focus~.label-text {
+    color: #F0F0F0;
+    font-size: 13px;
+    transform: translateY(-74px);
+}
+
+.animated-search-input label input:valid~.label-text {
+    font-size: 13px;
+    transform: translateY(-74px);
+}
+
+.animated-search-input label input:invalid {
+    box-shadow: none;
+}
+
+
+.animated-search-input label .placeholder {
+    color: #F0F0F0;
+    font-size: 10px;
+    transition: all 0.3s;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.animated-search-input label input:focus~.placeholder {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    letter-spacing: 2px;
+}
+
+.animated-search-input label input:valid~.placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.animated-search-input .animated-search-input-suggestions {
+    padding-top: 10px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.animated-search-input .cancel {
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    color: #9B9B9B;
+    border: 0;
+    border-bottom: 2px solid #4A4A4A;
+    padding-bottom: 11px;
+    cursor: pointer;
+}
+
+.animated-search-input label input:valid~.cancel {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media only screen and (max-width: 412px) {
+    .animated-search-input label .label-text {
+        font-size: 9px;
+    }
+
+    .animated-search-input label input:focus~.label-text {
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .animated-search-input label .label-text {
+        font-size: 8px;
+    }
+
+    .animated-search-input label input:focus~.label-text {
+        font-size: 8px;
+    }
+}

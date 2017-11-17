@@ -1,0 +1,29 @@
+.cheat-sheet-nav {
+    display: flex;
+}
+
+.cheat-sheet-nav .button {
+    padding-top: 47px;
+    flex: 1;
+    display: flex;
+}
+
+.cheat-sheet-nav .left {
+    justify-content: flex-start;
+    width: 10%;
+    
+}
+
+
+.cheat-sheet-nav .right {
+    justify-content: flex-end;
+    width: 10%;
+    transition: all 0.3s;
+}
+
+.cheat-sheet-nav .center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+}

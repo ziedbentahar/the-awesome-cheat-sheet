@@ -1,0 +1,15 @@
+{
+  "short_name": "Git me",
+  "name": "Git cheat sheet",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#f14e32",
+  "background_color": "#ffffff"
+}
