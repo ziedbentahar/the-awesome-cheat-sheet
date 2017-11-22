@@ -1,58 +1,50 @@
-import lunr from 'lunr';
-import groupBy from 'helpers/groupBy';
+import lunr from "lunr";
+import groupBy from "helpers/groupBy";
 
 export default class SearchService {
+  constructor({ documentsFileName, indexFileName }) {
+    this.documentsLoaded = false;
+    this.documentsFileName = documentsFileName;
+    this.indexFileName = indexFileName;
+  }
 
-    constructor({documentsFileName, indexFileName}) {
-
-        this.documentsLoaded = false;
-        this.documentsFileName = documentsFileName;
-        this.indexFileName = indexFileName;
+  async ensureDocumentsAndIndexLoadedAsync() {
+    if (this.documentsLoaded) {
+      return;
     }
 
-    async ensureDocumentsAndIndexLoadedAsync() {
+    const [documents, index] = await Promise.all([
+      (await fetch(this.documentsFileName)).json(),
+      (await fetch(this.indexFileName)).json()
+    ]);
 
-        if(this.documentsLoaded) {
-            return;
-        }
+    this.index = lunr.Index.load(index);
 
-        const [documents,
-            index] = await Promise.all([
-            (await fetch(this.documentsFileName)).json(),
-            (await fetch(this.indexFileName)).json()
-        ]);
+    this.documents = documents;
+    this.allDocumentsGroupedByCategory = groupBy(
+      Object.values(this.documents),
+      "category"
+    );
 
-        this.index = lunr
-            .Index
-            .load(index);
+    this.documentsLoaded = true;
+  }
 
-        this.documents = documents;
-        this.allDocumentsGroupedByCategory = groupBy(Object.values(this.documents), 'category');
+  getAllDocumentsAsync = async () => {
+    await this.ensureDocumentsAndIndexLoadedAsync();
+    return this.allDocumentsGroupedByCategory;
+  };
 
-        this.documentsLoaded = true;
+  searchByPrefixAsync = async queryTerm => {
+    if (!queryTerm) {
+      return;
     }
 
-    getAllDocumentsAsync = async() => {
+    await this.ensureDocumentsAndIndexLoadedAsync();
 
-        await this.ensureDocumentsAndIndexLoadedAsync();
-        return this.allDocumentsGroupedByCategory;
+    const result = this.index.search(`${queryTerm}^100 ${queryTerm}*^10`);
+
+    if (result && result.length > 0) {
+      return groupBy(result.map(item => this.documents[item.ref]), "category");
     }
-
-    searchByPrefixAsync = async(queryTerm) => {
-
-        if (!queryTerm) {
-            return;
-        }
-
-        await this.ensureDocumentsAndIndexLoadedAsync();
-
-        const result = this
-            .index
-            .search(`${queryTerm}^100 ${queryTerm}*^10`);
-
-        if (result && result.length > 0) {
-            return groupBy(result.map(item => this.documents[item.ref]), 'category');
-        }
-
-    }
+  };
 }

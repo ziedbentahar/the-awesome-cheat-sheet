@@ -1,97 +1,104 @@
 .search-suggestions-grid {
-    font-size: 38px;
-    color: #F0F0F0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+  font-size: 38px;
+  color: #f0f0f0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
 .search-suggestions-grid section div {
-    border: 1px solid #474747;
-    margin: 2px;
-    border-radius: 3px;
-    box-shadow: 1px;
+  border: 1px solid #474747;
+  margin: 2px;
+  border-radius: 3px;
+  box-shadow: 1px;
 }
 
 .search-suggestions-grid section h3 {
-    text-transform: uppercase;
-    font-size: 13px;
-    line-height: 1;
-    padding-left: 5px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin: 0;
-    background: #FF9900;
-    color: #333333;
-    font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 1;
+  padding-left: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0;
+  background: #ff9900;
+  color: #333333;
+  font-weight: bold;
 }
 
 .search-suggestions-grid ul {
-    list-style: none;
-    padding-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 360px;
+  list-style: none;
+  padding-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 360px;
 }
 
 .search-suggestions-grid section ul li {
-    font-size: 15px;
-    padding-bottom: 10px;
-    font-weight: 300;
-    cursor: pointer;
-    cursor: hand;
-    transition: all 0.5s;
+  font-size: 15px;
+  padding-bottom: 10px;
+  font-weight: 300;
+  cursor: pointer;
+  cursor: hand;
+  transition: all 0.5s;
+}
+
+.search-suggestions-grid section ul li div {
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: 0px;
 }
 
 .search-suggestions-grid section ul li .description {
-    margin: 5px;
-    font-size: 15px;
-    padding-bottom: 5px;
+  margin: 5px;
+  font-size: 15px;
+  padding-bottom: 5px;
 }
 
 .search-suggestions-grid section ul li .details {
-    margin: 5px;
-    font-size: 12px;
-    padding-bottom: 5px;
-    font-family: 'Inconsolata', sans-serif;
+  margin: 5px;
+  font-size: 12px;
+  padding-bottom: 5px;
+  font-family: "Inconsolata", sans-serif;
 }
 
 .search-suggestions-grid section ul li:hover {
-    padding-left: 2px;
+  padding-left: 2px;
 }
 
 @media only screen and (max-width: 780px) {
-    .search-suggestions-grid {
-        width: 98%;
-    }
+  .search-suggestions-grid {
+    width: 98%;
+  }
 
-    .search-suggestions-grid section {
-        width: 360px;
-    }
+  .search-suggestions-grid section {
+    width: 360px;
+  }
 
-    .search-suggestions-grid ul {
-        width: 320px;
-    }
-    .search-suggestions-grid section ul li .description {
-        font-size: 17px;
-    }
+  .search-suggestions-grid ul {
+    width: 320px;
+  }
+  .search-suggestions-grid section ul li .description {
+    font-size: 17px;
+  }
 }
 
 @media only screen and (max-width: 412px) {
-    .search-suggestions-grid section {
-        width: 99%;
-    }
-    .search-suggestions-grid ul {
-        width: 98%;
-    }
-    .search-suggestions-grid section ul li .description {
-        font-size: 20px;
-    }
+  .search-suggestions-grid section {
+    width: 99%;
+  }
+  .search-suggestions-grid ul {
+    width: 98%;
+  }
+  .search-suggestions-grid section ul li .description {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 340px) {
-    .search-suggestions-grid section ul li .description {
-        font-size: 14px;
-    }
+  .search-suggestions-grid section ul li .description {
+    font-size: 14px;
+  }
 }

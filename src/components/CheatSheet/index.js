@@ -1,2 +1,2 @@
-import CheatSheet from './CheatSheet';
+import CheatSheet from "./CheatSheet";
 export default CheatSheet;

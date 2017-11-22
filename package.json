@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "clipboard": "^1.7.1",
     "font-awesome": "^4.7.0",
     "lunr": "^2.1.4",
     "react": "^16.0.0",
@@ -13,6 +14,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
     "react-sidebar": "^2.3.2",
+    "react-tippy": "^1.2.2",
     "react-transition-group": "^1.2.1",
     "rimraf": "^2.6.2"
   },
