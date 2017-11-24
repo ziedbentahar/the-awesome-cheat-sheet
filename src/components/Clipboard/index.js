@@ -7,7 +7,7 @@ import "react-tippy/dist/tippy.css";
 const CLICK_TO_COPY_TO_CLIPBOARD = "with-clipboard";
 
 const clipboard = new Clipboard(`.${CLICK_TO_COPY_TO_CLIPBOARD}`);
-clipboard.on("success", e => console.log(e.text));
+clipboard.on("success", e => {});
 
 export default class WithClipboard extends React.Component {
   render() {
