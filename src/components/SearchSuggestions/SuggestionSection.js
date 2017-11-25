@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import WithClipboard from "components/Clipboard";
 
-const ItemCommand = ({ command }) => command && <pre className="details">$ {command}</pre>;
 
 const SuggestionSectionList = ({ items, onMoreClick }) => {
   const listItems = items.map(item => (
@@ -10,7 +9,7 @@ const SuggestionSectionList = ({ items, onMoreClick }) => {
       <p className="description">{item.description}</p>
       <WithClipboard
         clipboardText={item.command}
-        renderComponent={() => <ItemCommand command={item.command} />}
+        renderComponent={() => item.command && <pre className="details">$ {item.command}</pre>}
       />
     </li>
   ));
