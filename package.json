@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "clipboard": "^1.7.1",
     "font-awesome": "^4.7.0",
     "lunr": "^2.1.4",

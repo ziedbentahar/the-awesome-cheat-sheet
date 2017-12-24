@@ -5,14 +5,9 @@ import { SidebarContent } from "components/Sidebar";
 import CheatSheetView from "views/CheatSheetView";
 import cheatSheetConfig from "config/cheatSheetConfig";
 
+import "babel-polyfill";
 import "font-awesome/css/font-awesome.min.css";
 import "./App.css";
-
-const clipboard = new Clipboard(".clipboard");
-
-clipboard.on("success", e => {
-  console.log(e);
-});
 
 class App extends Component {
   constructor() {
